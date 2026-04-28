@@ -1,0 +1,56 @@
+{
+  "default": {
+    "headingPrimary": {
+      "web": [
+        "IvarSoft",
+        "serif"
+      ],
+      "android": "IvarSoft",
+      "ios": "IvarSoft",
+      "files": [
+        "fonts/IvarSoft-SemiBold.ttf",
+        "fonts/IvarSoft-SemiBoldItalic.ttf"
+      ]
+    },
+    "headingSecondary": {
+      "web": [
+        "BMDupletDSP",
+        "HelveticaDSP",
+        "sans-serif"
+      ],
+      "android": "BMDupletDSP",
+      "ios": "BMDupletDSP",
+      "files": [
+        "fonts/BMDupletDSP-Semibold.otf"
+      ]
+    },
+    "body": {
+      "web": [
+        "BMDupletTXT",
+        "HelveticaTXT",
+        "sans-serif"
+      ],
+      "android": "BMDupletTXT",
+      "ios": "BMDupletTXT",
+      "files": [
+        "fonts/BMDupletTXT-Regular.otf",
+        "fonts/BMDupletTXT-Semibold.otf",
+        "fonts/BMDupletTXT-Italic.otf",
+        "fonts/BMDupletTXT-SemiboldItalic.otf"
+      ]
+    },
+    "tabular": {
+      "web": [
+        "BMDupletTXT",
+        "HelveticaTXT",
+        "sans-serif"
+      ],
+      "android": "BMDupletTXT",
+      "ios": "BMDupletTXT",
+      "files": [
+        "fonts/BMDupletTXT-Regular.otf",
+        "fonts/BMDupletTXT-Semibold.otf"
+      ]
+    }
+  }
+}

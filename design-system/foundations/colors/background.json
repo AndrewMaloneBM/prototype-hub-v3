@@ -1,0 +1,1231 @@
+{
+  "color.background.static.default.hi": {
+    "comment": "Static background for strongly highlighted containers",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.90",
+        "value": "hsl(225, 15%, 89%)"
+      },
+      "hover": {
+        "ref": "color.raw.grey.84",
+        "value": "hsl(225, 9%, 83%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.25",
+        "value": "hsl(223, 6%, 24%)"
+      },
+      "hover": {
+        "ref": "color.raw.grey.41",
+        "value": "hsl(223, 4%, 39%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.static.default.mid": {
+    "comment": "Static background for mildly highlighted containers",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.94",
+        "value": "hsl(220, 19%, 94%)"
+      },
+      "hover": {
+        "ref": "color.raw.grey.88",
+        "value": "hsl(231, 10%, 86%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.20",
+        "value": "hsl(223, 7%, 20%)"
+      },
+      "hover": {
+        "ref": "color.raw.grey.36",
+        "value": "hsl(223, 4%, 34%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.static.default.low": {
+    "comment": "Default static background for containers",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      },
+      "hover": {
+        "ref": "color.raw.grey.94",
+        "value": "hsl(220, 19%, 94%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.10",
+        "value": "hsl(214, 12%, 11%)"
+      },
+      "hover": {
+        "ref": "color.raw.grey.26",
+        "value": "hsl(223, 6%, 25%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.static.default.min": {
+    "comment": "Transparent background for containers.",
+    "default": {
+      "base": {
+        "ref": "color.raw.alpha.black.0",
+        "value": "hsla(225, 21%, 7%, 0)"
+      },
+      "hover": {
+        "ref": "color.raw.alpha.black.6",
+        "value": "hsla(225, 21%, 7%, 0.06)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.alpha.white.0",
+        "value": "hsla(223, 28%, 95%, 0)"
+      },
+      "hover": {
+        "ref": "color.raw.alpha.white.6",
+        "value": "hsla(223, 28%, 95%, 0.06)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.static.warning.hi": {
+    "comment": "Static background for strongly highlighted containers with a warning function.",
+    "default": {
+      "base": {
+        "ref": "color.functional.warning.80",
+        "value": "hsl(39, 70%, 69%)"
+      },
+      "hover": {
+        "ref": "color.functional.warning.74",
+        "value": "hsl(39, 58%, 63%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.functional.warning.30",
+        "value": "hsl(42, 98%, 19%)"
+      },
+      "hover": {
+        "ref": "color.functional.warning.46",
+        "value": "hsl(41, 59%, 34%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.static.warning.mid": {
+    "comment": "Static background for mildly highlighted containers with a warning function.",
+    "default": {
+      "base": {
+        "ref": "color.functional.warning.90",
+        "value": "hsl(38, 90%, 84%)"
+      },
+      "hover": {
+        "ref": "color.functional.warning.84",
+        "value": "hsl(38, 78%, 75%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.functional.warning.20",
+        "value": "hsl(42, 94%, 13%)"
+      },
+      "hover": {
+        "ref": "color.functional.warning.36",
+        "value": "hsl(41, 82%, 24%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.static.warning.low": {
+    "comment": "Static background for subtle containers with a warning function.",
+    "default": {
+      "base": {
+        "ref": "color.functional.warning.95",
+        "value": "hsl(36, 95%, 92%)"
+      },
+      "hover": {
+        "ref": "color.functional.warning.89",
+        "value": "hsl(38, 84%, 83%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.functional.warning.15",
+        "value": "hsl(41, 100%, 10%)"
+      },
+      "hover": {
+        "ref": "color.functional.warning.31",
+        "value": "hsl(42, 94%, 19%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.static.danger.hi": {
+    "comment": "Static background for strongly highlighted containers with a danger function.",
+    "default": {
+      "base": {
+        "ref": "color.functional.danger.80",
+        "value": "hsl(2, 100%, 85%)"
+      },
+      "hover": {
+        "ref": "color.functional.danger.74",
+        "value": "hsl(2, 92%, 79%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.functional.danger.30",
+        "value": "hsl(350, 91%, 29%)"
+      },
+      "hover": {
+        "ref": "color.functional.danger.46",
+        "value": "hsl(354, 69%, 49%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.static.danger.mid": {
+    "comment": "Static background for mildly highlighted containers with a danger function.",
+    "default": {
+      "base": {
+        "ref": "color.functional.danger.90",
+        "value": "hsl(3, 100%, 92%)"
+      },
+      "hover": {
+        "ref": "color.functional.danger.84",
+        "value": "hsl(3, 91%, 87%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.functional.danger.20",
+        "value": "hsl(353, 82%, 22%)"
+      },
+      "hover": {
+        "ref": "color.functional.danger.36",
+        "value": "hsl(350, 85%, 36%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.static.danger.low": {
+    "comment": "Static background for subtle containers with a danger function.",
+    "default": {
+      "base": {
+        "ref": "color.functional.danger.95",
+        "value": "hsl(6, 100%, 96%)"
+      },
+      "hover": {
+        "ref": "color.functional.danger.89",
+        "value": "hsl(3, 87%, 91%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.functional.danger.15",
+        "value": "hsl(352, 100%, 16%)"
+      },
+      "hover": {
+        "ref": "color.functional.danger.31",
+        "value": "hsl(352, 84%, 32%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.static.success.hi": {
+    "comment": "Static background for strongly highlighted containers with a success function.",
+    "default": {
+      "base": {
+        "ref": "color.functional.success.80",
+        "value": "hsl(149, 67%, 61%)"
+      },
+      "hover": {
+        "ref": "color.functional.success.74",
+        "value": "hsl(150, 57%, 54%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.functional.success.30",
+        "value": "hsl(155, 100%, 16%)"
+      },
+      "hover": {
+        "ref": "color.functional.success.46",
+        "value": "hsl(156, 88%, 26%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.static.success.mid": {
+    "comment": "Static background for mildly highlighted containers with a success function.",
+    "default": {
+      "base": {
+        "ref": "color.functional.success.90",
+        "value": "hsl(145, 83%, 77%)"
+      },
+      "hover": {
+        "ref": "color.functional.success.84",
+        "value": "hsl(148, 74%, 67%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.functional.success.20",
+        "value": "hsl(154, 100%, 11%)"
+      },
+      "hover": {
+        "ref": "color.functional.success.36",
+        "value": "hsl(155, 90%, 20%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.static.success.low": {
+    "comment": "Static background for subtle containers with a success function.",
+    "default": {
+      "base": {
+        "ref": "color.functional.success.95",
+        "value": "hsl(139, 85%, 90%)"
+      },
+      "hover": {
+        "ref": "color.functional.success.89",
+        "value": "hsl(145, 80%, 77%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.functional.success.15",
+        "value": "hsl(152, 100%, 9%)"
+      },
+      "hover": {
+        "ref": "color.functional.success.31",
+        "value": "hsl(155, 91%, 17%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.static.info.max": {
+    "comment": "Static background for strongly highlighted small containers with an information function.",
+    "default": {
+      "base": {
+        "ref": "color.raw.mindaro.94",
+        "value": "hsl(70, 88%, 73%)"
+      },
+      "hover": {
+        "ref": "color.raw.mindaro.88",
+        "value": "hsl(72, 58%, 75%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.mindaro.40",
+        "value": "hsl(69, 100%, 20%)"
+      },
+      "hover": {
+        "ref": "color.raw.mindaro.50",
+        "value": "hsl(69, 80%, 28%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.static.info.hi": {
+    "comment": "Static background for highlighted containers with an information function.",
+    "default": {
+      "base": {
+        "ref": "color.functional.info.80",
+        "value": "hsl(219, 65%, 82%)"
+      },
+      "hover": {
+        "ref": "color.functional.info.74",
+        "value": "hsl(219, 49%, 75%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.functional.info.30",
+        "value": "hsl(219, 35%, 31%)"
+      },
+      "hover": {
+        "ref": "color.functional.info.46",
+        "value": "hsl(218, 25%, 46%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.static.info.mid": {
+    "comment": "Static background for mildly highlighted containers with an information function.",
+    "default": {
+      "base": {
+        "ref": "color.functional.info.90",
+        "value": "hsl(221, 86%, 92%)"
+      },
+      "hover": {
+        "ref": "color.functional.info.84",
+        "value": "hsl(220, 72%, 86%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.functional.info.20",
+        "value": "hsl(219, 47%, 23%)"
+      },
+      "hover": {
+        "ref": "color.functional.info.36",
+        "value": "hsl(219, 30%, 37%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.static.info.low": {
+    "comment": "Static background for subtle containers with an information function.",
+    "default": {
+      "base": {
+        "ref": "color.functional.info.95",
+        "value": "hsl(227, 90%, 96%)"
+      },
+      "hover": {
+        "ref": "color.functional.info.89",
+        "value": "hsl(221, 76%, 90%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.functional.info.15",
+        "value": "hsl(218, 60%, 17%)"
+      },
+      "hover": {
+        "ref": "color.functional.info.31",
+        "value": "hsl(219, 34%, 32%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.static.brand.hi": {
+    "comment": "Static background for brand-hi containers",
+    "default": {
+      "base": {
+        "ref": "color.raw.mid.cornflower.90",
+        "value": "hsl(236, 78%, 93%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.dark.tangaroa.20",
+        "value": "hsl(223, 85%, 25%)"
+      }
+    }
+  },
+  "color.background.static.brand.mid": {
+    "comment": "Static background for brand-mid containers",
+    "default": {
+      "base": {
+        "ref": "color.raw.mid.purple.90",
+        "value": "hsl(274, 84%, 93%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.dark.violet.20",
+        "value": "hsl(280, 63%, 24%)"
+      }
+    }
+  },
+  "color.background.static.brand.low": {
+    "comment": "Static background for brand-low containers",
+    "default": {
+      "base": {
+        "ref": "color.raw.mid.blush.90",
+        "value": "hsl(344, 100%, 93%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.dark.coffee.20",
+        "value": "hsl(357, 67%, 22%)"
+      }
+    }
+  },
+  "color.background.static.backup.low": {
+    "comment": "Static BackUp backgrounds.",
+    "default": {
+      "base": {
+        "ref": "color.raw.backup.79",
+        "value": "hsl(158, 100%, 44%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.backup.79",
+        "value": "hsl(158, 100%, 44%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.action.default.hi": {
+    "comment": "Background for important action containers.",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.5",
+        "value": "hsl(225, 21%, 7%)"
+      },
+      "hover": {
+        "ref": "color.raw.grey.21",
+        "value": "hsl(231, 7%, 21%)"
+      },
+      "pressed": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      },
+      "hoverpressed": {
+        "ref": "color.raw.grey.94",
+        "value": "hsl(220, 19%, 94%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      },
+      "hover": {
+        "ref": "color.raw.grey.94",
+        "value": "hsl(220, 19%, 94%)"
+      },
+      "pressed": {
+        "ref": "color.raw.grey.10",
+        "value": "hsl(214, 12%, 11%)"
+      },
+      "hoverpressed": {
+        "ref": "color.raw.grey.26",
+        "value": "hsl(223, 6%, 25%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.action.default.mid": {
+    "comment": "Background for secondary action containers.",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.94",
+        "value": "hsl(220, 19%, 94%)"
+      },
+      "hover": {
+        "ref": "color.raw.grey.88",
+        "value": "hsl(231, 10%, 86%)"
+      },
+      "pressed": {
+        "ref": "color.raw.grey.5",
+        "value": "hsl(225, 21%, 7%)"
+      },
+      "hoverpressed": {
+        "ref": "color.raw.grey.21",
+        "value": "hsl(231, 7%, 21%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.20",
+        "value": "hsl(223, 7%, 20%)"
+      },
+      "hover": {
+        "ref": "color.raw.grey.46",
+        "value": "hsl(223, 3%, 43%)"
+      },
+      "pressed": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      },
+      "hoverpressed": {
+        "ref": "color.raw.grey.94",
+        "value": "hsl(220, 19%, 94%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.action.default.low": {
+    "comment": "Background for subtle action containers.",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      },
+      "hover": {
+        "ref": "color.raw.grey.94",
+        "value": "hsl(220, 19%, 94%)"
+      },
+      "pressed": {
+        "ref": "color.raw.grey.5",
+        "value": "hsl(225, 21%, 7%)"
+      },
+      "hoverpressed": {
+        "ref": "color.raw.grey.21",
+        "value": "hsl(231, 7%, 21%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.10",
+        "value": "hsl(214, 12%, 11%)"
+      },
+      "hover": {
+        "ref": "color.raw.grey.26",
+        "value": "hsl(223, 6%, 25%)"
+      },
+      "pressed": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      },
+      "hoverpressed": {
+        "ref": "color.raw.grey.94",
+        "value": "hsl(220, 19%, 94%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.action.default.min": {
+    "comment": "Background for transparent action containers.",
+    "default": {
+      "base": {
+        "ref": "color.raw.alpha.black.0",
+        "value": "hsla(225, 21%, 7%, 0)"
+      },
+      "hover": {
+        "ref": "color.raw.alpha.black.6",
+        "value": "hsla(225, 21%, 7%, 0.06)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.alpha.white.0",
+        "value": "hsla(223, 28%, 95%, 0)"
+      },
+      "hover": {
+        "ref": "color.raw.alpha.white.6",
+        "value": "hsla(223, 28%, 95%, 0.06)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.action.default.brand.hi": {
+    "comment": "Background for picker in cornflower color.",
+    "default": {
+      "base": {
+        "ref": "color.raw.dark.tangaroa.95",
+        "value": "hsl(236, 88%, 97%)"
+      }
+    }
+  },
+  "color.background.action.default.brand.mid": {
+    "comment": "Background for picker in purple color.",
+    "default": {
+      "base": {
+        "ref": "color.raw.mid.purple.95",
+        "value": "hsl(281, 80%, 96%)"
+      }
+    }
+  },
+  "color.background.action.default.brand.low": {
+    "comment": "Background for picker in blush color.",
+    "default": {
+      "base": {
+        "ref": "color.raw.mid.blush.95",
+        "value": "hsl(347, 100%, 96%)"
+      }
+    }
+  },
+  "color.background.action.danger.hi": {
+    "comment": "Background for important action containers with a danger function.",
+    "default": {
+      "base": {
+        "ref": "color.functional.danger.40",
+        "value": "hsl(351, 84%, 39%)"
+      },
+      "hover": {
+        "ref": "color.functional.danger.50",
+        "value": "hsl(354, 72%, 52%)"
+      },
+      "pressed": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      },
+      "hoverpressed": {
+        "ref": "color.raw.grey.94",
+        "value": "hsl(220, 19%, 94%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.functional.danger.60",
+        "value": "hsl(357, 92%, 65%)"
+      },
+      "hover": {
+        "ref": "color.functional.danger.50",
+        "value": "hsl(354, 72%, 52%)"
+      },
+      "pressed": {
+        "ref": "color.functional.danger.10",
+        "value": "hsl(354, 100%, 13%)"
+      },
+      "hoverpressed": {
+        "ref": "color.functional.danger.26",
+        "value": "hsl(350, 95%, 26%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.action.danger.min": {
+    "comment": "Background for transparent action containers with a danger function.",
+    "default": {
+      "base": {
+        "ref": "color.raw.alpha.danger40.0",
+        "value": "hsla(351, 84%, 39%, 0)"
+      },
+      "hover": {
+        "ref": "color.raw.alpha.danger40.6",
+        "value": "hsla(351, 84%, 39%, 0.06)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.alpha.danger60.0",
+        "value": "hsla(357, 92%, 65%, 0)"
+      },
+      "hover": {
+        "ref": "color.raw.alpha.danger60.6",
+        "value": "hsla(357, 92%, 65%, 0.06)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.action.success.hi": {
+    "comment": "Background for important action containers with a success function.",
+    "default": {
+      "base": {
+        "ref": "color.functional.success.40",
+        "value": "hsl(156, 100%, 21%)"
+      },
+      "hover": {
+        "ref": "color.functional.success.50",
+        "value": "hsl(157, 100%, 27%)"
+      },
+      "pressed": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      },
+      "hoverpressed": {
+        "ref": "color.raw.grey.94",
+        "value": "hsl(220, 19%, 94%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.functional.success.60",
+        "value": "hsl(157, 100%, 33%)"
+      },
+      "hover": {
+        "ref": "color.functional.success.50",
+        "value": "hsl(157, 100%, 27%)"
+      },
+      "pressed": {
+        "ref": "color.functional.success.10",
+        "value": "hsl(151, 100%, 6%)"
+      },
+      "hoverpressed": {
+        "ref": "color.functional.success.26",
+        "value": "hsl(154, 92%, 15%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.action.success.min": {
+    "comment": "Background for transparent action containers with a success function.",
+    "default": {
+      "base": {
+        "ref": "color.raw.alpha.success40.0",
+        "value": "hsla(156, 100%, 21%, 0)"
+      },
+      "hover": {
+        "ref": "color.raw.alpha.success40.6",
+        "value": "hsla(156, 100%, 21%, 0.06)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.alpha.success60.0",
+        "value": "hsla(157, 100%, 33%, 0)"
+      },
+      "hover": {
+        "ref": "color.raw.alpha.success60.6",
+        "value": "hsla(157, 100%, 33%, 0.06)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.surface.default.hi": {
+    "comment": "Contrasting background for pages and sections.",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.96",
+        "value": "hsl(228, 24%, 96%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.15",
+        "value": "hsl(223, 9%, 15%)"
+      }
+    }
+  },
+  "color.background.surface.default.mid": {
+    "comment": "Slightly contrasting background for pages and sections.",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.98",
+        "value": "hsl(225, 40%, 98%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.12",
+        "value": "hsl(214, 11%, 13%)"
+      }
+    }
+  },
+  "color.background.surface.default.low": {
+    "comment": "Default background for pages and sections.",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.10",
+        "value": "hsl(214, 12%, 11%)"
+      }
+    }
+  },
+  "color.background.surface.brand.hi": {
+    "comment": "Background for blue branded sections or pages",
+    "default": {
+      "base": {
+        "ref": "color.raw.mid.cornflower.96",
+        "value": "hsl(265, 75%, 97%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.dark.tangaroa.9",
+        "value": "hsl(226, 73%, 15%)"
+      }
+    }
+  },
+  "color.background.surface.brand.mid": {
+    "comment": "Background for purple branded sections or pages",
+    "default": {
+      "base": {
+        "ref": "color.raw.mid.purple.96",
+        "value": "hsl(300, 58%, 96%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.dark.violet.10",
+        "value": "hsl(279, 59%, 14%)"
+      }
+    }
+  },
+  "color.background.surface.brand.low": {
+    "comment": "Background for pink branded sections or pages",
+    "default": {
+      "base": {
+        "ref": "color.raw.mid.blush.96",
+        "value": "hsl(0, 88%, 97%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.dark.coffee.8",
+        "value": "hsl(0, 55%, 11%)"
+      }
+    }
+  },
+  "color.background.surface.brand.min": {
+    "comment": "Background for extra content hierarchy",
+    "default": {
+      "base": "hsl(33, 31%, 94%)"
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.5",
+        "value": "hsl(225, 21%, 7%)"
+      }
+    }
+  },
+  "color.background.float.default.low": {
+    "comment": "Background for elements with an elevation of 1, e.g. Cards.",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      },
+      "hover": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.15",
+        "value": "hsl(223, 9%, 15%)"
+      },
+      "hover": {
+        "ref": "color.raw.grey.31",
+        "value": "hsl(223, 5%, 29%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.float.default.mid": {
+    "comment": "Background for contrasting elements with an elevation of 1, e.g. Cards.",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.94",
+        "value": "hsl(220, 19%, 94%)"
+      },
+      "hover": {
+        "ref": "color.raw.grey.88",
+        "value": "hsl(231, 10%, 86%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.15",
+        "value": "hsl(223, 9%, 15%)"
+      },
+      "hover": {
+        "ref": "color.raw.grey.31",
+        "value": "hsl(223, 5%, 29%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.float.default.hi": {
+    "comment": "Background for high contrasting elements with an elevation 1 and more",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.90",
+        "value": "hsl(225, 15%, 89%)"
+      },
+      "hover": {
+        "ref": "color.raw.grey.84",
+        "value": "hsl(225, 9%, 83%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.25",
+        "value": "hsl(223, 6%, 24%)"
+      },
+      "hover": {
+        "ref": "color.raw.grey.41",
+        "value": "hsl(223, 4%, 39%)"
+      }
+    }
+  },
+  "color.background.overlap.default.low": {
+    "comment": "Background for elements with an elevation of 2.",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      },
+      "hover": {
+        "ref": "color.raw.grey.94",
+        "value": "hsl(220, 19%, 94%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.20",
+        "value": "hsl(223, 7%, 20%)"
+      },
+      "hover": {
+        "ref": "color.raw.grey.36",
+        "value": "hsl(223, 4%, 34%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.raised.default.low": {
+    "comment": "Background for elements with an elevation of 3.",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      },
+      "hover": {
+        "ref": "color.raw.grey.94",
+        "value": "hsl(220, 19%, 94%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.25",
+        "value": "hsl(223, 6%, 24%)"
+      },
+      "hover": {
+        "ref": "color.raw.grey.41",
+        "value": "hsl(223, 4%, 39%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  },
+  "color.background.overlay.hi": {
+    "comment": "Strong scrimming color, to use with non-comparative overlay components.",
+    "default": {
+      "base": {
+        "ref": "color.raw.alpha.black.85",
+        "value": "hsla(225, 21%, 7%, 0.85)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.alpha.black.85",
+        "value": "hsla(225, 21%, 7%, 0.85)"
+      }
+    }
+  },
+  "color.background.overlay.low": {
+    "comment": "Light scrimming color, to use with comparative overlay components.",
+    "default": {
+      "base": {
+        "ref": "color.raw.alpha.black.40",
+        "value": "hsla(225, 21%, 7%, 0.4)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.alpha.white.40",
+        "value": "hsla(223, 28%, 95%, 0.4)"
+      }
+    }
+  }
+}

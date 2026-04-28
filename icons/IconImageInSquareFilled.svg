@@ -1,0 +1,3 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <g clip-path="url(#icon-image-in-square-filled-clip)"><path fill-rule="evenodd" d="M18 3.25A2.75 2.75 0 0 1 20.75 6v12A2.75 2.75 0 0 1 18 20.75H6A2.75 2.75 0 0 1 3.25 18V6A2.75 2.75 0 0 1 6 3.25h12m-5.652 8.104a.501.501 0 0 0-.708 0l-4.287 4.293A.5.5 0 0 0 7.706 16.5h8.586a.5.5 0 0 0 .353-.854l-4.297-4.292M8.625 7.25a1.375 1.375 0 1 0 0 2.75 1.375 1.375 0 0 0 0-2.75" clip-rule="evenodd" fill="currentColor"/></g><defs><clipPath id="icon-image-in-square-filled-clip"><path d="M0 0h24v24H0z"/></clipPath></defs>
+</svg>

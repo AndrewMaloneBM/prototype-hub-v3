@@ -1,0 +1,17 @@
+{
+  "short": {
+    "comment": "For cards and other components for which we want to create a sense of elevation.",
+    "shadow": "0.0px 2.0px 4.0px 0px rgba(0, 0, 0, 0.05)",
+    "fill": "rgba(255, 255, 255, 1.0)"
+  },
+  "middle": {
+    "comment": "For non-interactive components with interactive children which need a small hint of their elevation as they are hovered or as the children are focused.",
+    "shadow": "0.0px 4.0px 8.0px 0px rgba(0, 0, 0, 0.08)",
+    "fill": "rgba(255, 255, 255, 1.0)"
+  },
+  "long": {
+    "comment": "Replaces the short shadow on interactive components that are being hovered (but not when focused).",
+    "shadow": "0.0px 8.0px 16.0px 0px rgba(0, 0, 0, 0.12)",
+    "fill": "rgba(255, 255, 255, 1.0)"
+  }
+}

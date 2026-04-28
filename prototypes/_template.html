@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prototype</title>
+
+  <!-- Tailwind config must be defined before loading the CDN script -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'bm-green':        { 50:'#edfaf4', 100:'#d0f3e3', 200:'#a4e8ca', 300:'#6dd6ab', 400:'#38be8a', 500:'#18a271', 600:'#0d8259', 700:'#0b6847', 800:'#0a5239', 900:'#08402d' },
+            'bm-gray':         { 50:'hsl(225,40%,98%)', 100:'hsl(220,19%,94%)', 200:'hsl(225,15%,89%)', 300:'hsl(223,4%,68%)', 400:'hsl(223,3%,52%)', 500:'hsl(223,4%,37%)', 600:'hsl(223,4%,33%)', 700:'hsl(223,7%,20%)', 800:'hsl(214,12%,11%)', 900:'hsl(225,21%,7%)' },
+            'bm-surface':      'hsl(228,24%,96%)',
+            'bm-text-hi':      'hsl(225,21%,7%)',
+            'bm-text-mid':     'hsl(223,7%,20%)',
+            'bm-text-low':     'hsl(223,4%,37%)',
+            'bm-text-muted':   'hsl(223,3%,52%)',
+            'bm-border':       'hsl(225,15%,89%)',
+            'bm-border-action':'hsl(223,3%,52%)',
+            'bm-danger':       'hsl(351,84%,39%)',
+            'bm-warning':      'hsl(42,75%,27%)',
+            'bm-success':      'hsl(156,100%,21%)',
+            'bm-info':         'hsl(219,27%,40%)',
+          },
+          fontFamily: {
+            'heading-primary':   ['IvarSoft', 'Georgia', 'serif'],
+            'heading-secondary': ['BMDupletDSP', 'sans-serif'],
+            body:                ['BMDupletTXT', 'sans-serif'],
+          },
+          borderRadius: {
+            'bm-xs': '2px',
+            'bm-sm': '6px',
+            'bm':    '8px',
+            'bm-lg': '12px',
+            'bm-xl': '16px',
+          },
+        },
+      },
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @font-face { font-family: 'BMDupletTXT'; src: url('../fonts/BMDupletTXT-Regular.otf') format('opentype'); font-weight: 400; font-style: normal; }
+    @font-face { font-family: 'BMDupletTXT'; src: url('../fonts/BMDupletTXT-Semibold.otf') format('opentype'); font-weight: 600; font-style: normal; }
+    @font-face { font-family: 'BMDupletTXT'; src: url('../fonts/BMDupletTXT-Italic.otf') format('opentype'); font-weight: 400; font-style: italic; }
+    @font-face { font-family: 'BMDupletTXT'; src: url('../fonts/BMDupletTXT-SemiboldItalic.otf') format('opentype'); font-weight: 600; font-style: italic; }
+    @font-face { font-family: 'BMDupletDSP'; src: url('../fonts/BMDupletDSP-Semibold.otf') format('opentype'); font-weight: 600; font-style: normal; }
+    @font-face { font-family: 'IvarSoft'; src: url('../fonts/IvarSoft-SemiBold.ttf') format('truetype'); font-weight: 600; font-style: normal; }
+    @font-face { font-family: 'IvarSoft'; src: url('../fonts/IvarSoft-SemiBoldItalic.ttf') format('truetype'); font-weight: 600; font-style: italic; }
+
+    [v-cloak] { display: none; }
+
+    /* Hotspot flash — click anywhere in the prototype area to reveal interactive zones */
+    .prototype-hotspot { position: relative; }
+    .prototype-hotspot::before {
+      content: ''; position: absolute; inset: 0;
+      background-color: rgba(13,153,255,0.25); pointer-events: none; opacity: 0; z-index: 10;
+    }
+    .prototype-hotspots .prototype-hotspot::before {
+      animation: hotspotFlash 1000ms ease-out forwards;
+    }
+    @keyframes hotspotFlash {
+      0%   { opacity: 0; }
+      15%  { opacity: 1; }
+      70%  { opacity: 1; }
+      100% { opacity: 0; }
+    }
+  </style>
+</head>
+<body class="overflow-hidden">
+<div id="app" v-cloak class="flex h-screen overflow-hidden font-body" :class="showHotspots ? 'prototype-hotspots' : ''">
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SIDEBAR
+       ═══════════════════════════════════════════════════════════════════════ -->
+  <aside
+    :class="['flex-shrink-0 flex flex-col bg-gray-950 border-r border-gray-800 transition-all duration-200 overflow-hidden', sidebarOpen ? 'w-72' : 'w-12']"
+  >
+
+    <!-- Collapsed rail -->
+    <div v-if="!sidebarOpen" class="flex flex-col items-center px-2 py-3 gap-1">
+      <button @click="sidebarOpen = true" class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-white transition-colors rounded hover:bg-gray-800">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 3v18"/><path d="M11 9l3 3-3 3"/></svg>
+      </button>
+      <a href="../index.html" class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-white transition-colors rounded hover:bg-gray-800">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9.75L12 3l9 6.75V21a.75.75 0 01-.75.75H15a.75.75 0 01-.75-.75v-5.25h-4.5V21a.75.75 0 01-.75.75H3.75A.75.75 0 013 21V9.75z"/></svg>
+      </a>
+      <button
+        v-for="n in conceptMeta.length" :key="n"
+        :class="['relative overflow-hidden w-8 h-8 flex items-center justify-center text-xs rounded transition-colors', activeConcept === n ? 'bg-white text-gray-900 font-semibold' : 'text-gray-600 hover:text-gray-200 hover:bg-gray-800', DROPPED_CONCEPTS.includes(n) ? 'opacity-50' : '']"
+        @click="activeConcept = n"
+      >
+        {{ n }}
+        <span v-if="DROPPED_CONCEPTS.includes(n)" class="absolute inset-0 pointer-events-none">
+          <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" stroke="currentColor" stroke-width="8" stroke-linecap="round">
+            <line x1="10" y1="10" x2="90" y2="90"/>
+          </svg>
+        </span>
+      </button>
+    </div>
+
+    <!-- Expanded sidebar -->
+    <template v-else>
+
+      <!-- Zone 1: Header -->
+      <div class="sticky top-0 bg-gray-950 border-b border-gray-800 z-10 px-4 py-3 flex items-center justify-between flex-shrink-0">
+        <a href="../index.html" class="flex items-center gap-1.5 text-xs text-gray-400 hover:text-white transition-colors">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+          Hub
+        </a>
+        <span class="text-xs font-semibold text-white tracking-wide">{{ TITLE }}</span>
+        <button @click="sidebarOpen = false" class="text-gray-500 hover:text-white transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 3v18"/><path d="M14 9l-3 3 3 3"/></svg>
+        </button>
+      </div>
+
+      <!-- Zone 2: Controls -->
+      <div class="px-4 py-4 border-b border-gray-800 space-y-4 flex-shrink-0">
+
+        <!-- Concept switcher + Before/After + Reset -->
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <p class="text-[10px] text-gray-600 uppercase tracking-widest mr-auto">Concept</p>
+            <div class="flex items-center gap-1 text-[10px]">
+              <button :class="['transition-colors', previewMode === 'before' ? 'text-white font-semibold' : 'text-gray-600 hover:text-gray-400']" @click="previewMode = 'before'">Before</button>
+              <span class="text-gray-700">/</span>
+              <button :class="['transition-colors', previewMode === 'after' ? 'text-white font-semibold' : 'text-gray-600 hover:text-gray-400']" @click="previewMode = 'after'">After</button>
+            </div>
+            <div class="relative" @mouseenter="onResetHover" @mouseleave="onResetLeave">
+              <button @click="resetDismissedUi" class="p-1 rounded text-gray-600 hover:text-gray-300 hover:bg-gray-800 transition-colors">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"/></svg>
+              </button>
+              <div v-if="showResetTooltip" class="absolute right-0 top-6 z-20 bg-gray-700 text-white text-[11px] rounded px-2 py-1 whitespace-nowrap shadow-lg">
+                Reset dismissed UI
+              </div>
+            </div>
+          </div>
+          <div class="flex gap-1">
+            <button
+              v-for="n in conceptMeta.length" :key="n"
+              :class="['relative overflow-hidden rounded px-3 py-1.5 text-xs transition-colors', activeConcept === n ? 'bg-white text-gray-900 font-semibold' : 'text-gray-500 hover:text-gray-200 hover:bg-gray-800', DROPPED_CONCEPTS.includes(n) ? 'opacity-50' : '']"
+              @click="activeConcept = n"
+            >
+              {{ n }}
+              <span v-if="DROPPED_CONCEPTS.includes(n)" class="absolute inset-0 pointer-events-none">
+                <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" stroke="currentColor" stroke-width="8" stroke-linecap="round">
+                  <line x1="10" y1="10" x2="90" y2="90"/>
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Pages tree (What's New) -->
+        <div>
+          <p class="text-[10px] text-gray-600 uppercase tracking-widest mb-2">Pages (What's New)</p>
+          <div class="relative">
+            <div ref="pageTreeEl" class="space-y-px max-h-80 overflow-y-auto" @scroll="checkPageTreeScroll">
+            <div v-for="page in currentConcept.pages" :key="page.id">
+
+              <!-- Simple page — no sub-states -->
+              <template v-if="!page.subStates || !page.subStates.length">
+                <button
+                  :class="['w-full flex items-center gap-2 rounded px-2 py-1.5 transition-colors text-left', activePageId === page.id ? 'bg-white/10 text-white' : 'text-gray-500 hover:text-gray-300 hover:bg-gray-800/60']"
+                  @click="navigateTo(page.id)"
+                >
+                  <span :class="['w-1.5 h-1.5 rounded-full flex-shrink-0', activePageId === page.id ? 'bg-green-400' : 'bg-gray-700']" />
+                  <span :class="['text-xs', activePageId === page.id ? 'font-medium' : '']">{{ page.label }}</span>
+                </button>
+              </template>
+
+              <!-- Page with sub-states — accordion -->
+              <template v-else>
+                <div :class="['flex items-center gap-2 rounded px-2 py-1.5 transition-colors', activePageId === page.id ? 'text-white' : 'text-gray-500 hover:text-gray-300']">
+                  <button class="flex items-center gap-2 flex-1 min-w-0 text-left" @click="navigateTo(page.id)">
+                    <span :class="['w-1.5 h-1.5 rounded-full flex-shrink-0', activePageId === page.id ? 'bg-green-400' : 'bg-gray-700']" />
+                    <span :class="['text-xs truncate', activePageId === page.id ? 'font-medium' : '']">{{ page.label }}</span>
+                  </button>
+                  <button class="flex-shrink-0 p-0.5 text-gray-700 hover:text-gray-400 transition-colors" @click="toggleExpanded(page.id)">
+                    <svg class="w-3 h-3 transition-transform duration-150" :class="expandedPageIds.includes(page.id) ? 'rotate-90' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                  </button>
+                </div>
+                <div v-if="expandedPageIds.includes(page.id)" class="ml-4 mt-px mb-1 space-y-px">
+                  <button
+                    v-for="sub in page.subStates" :key="sub.id"
+                    :class="['w-full text-left flex items-center gap-2 px-2 py-1 rounded transition-colors', activeSubStateId === sub.id ? 'bg-white/10 text-white' : 'text-gray-500 hover:text-gray-300 hover:bg-gray-800/60']"
+                    @click="navigateToSubState(page.id, sub.id)"
+                  >
+                    <span :class="['w-1 h-1 rounded-full flex-shrink-0', activeSubStateId === sub.id ? 'bg-green-400' : 'bg-gray-700']" />
+                    <span class="text-[11px]">{{ sub.label }}</span>
+                  </button>
+                </div>
+              </template>
+
+            </div>
+            </div><!-- end page tree scroll -->
+            <div v-if="pageTreeHasMore" class="absolute bottom-0 left-0 right-0 h-14 bg-gradient-to-t from-gray-950 to-transparent pointer-events-none flex items-end justify-center pb-1">
+              <div class="flex flex-col items-center gap-0.5">
+                <svg class="w-3.5 h-3.5 text-gray-500 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                <span class="text-[9px] text-gray-600 uppercase tracking-widest">Scroll</span>
+              </div>
+            </div>
+          </div><!-- end relative wrapper -->
+        </div>
+
+      </div>
+
+      <!-- Zone 3: Concept details (scrollable) -->
+      <div class="flex-1 overflow-y-auto px-4 py-5 space-y-5 bg-gray-900">
+
+        <div>
+          <p class="text-[10px] text-gray-600 uppercase tracking-widest mb-1.5">Concept {{ activeConcept }}</p>
+          <p class="text-sm font-semibold text-white mb-2">{{ currentConcept.name }}</p>
+          <span class="inline-block text-[10px] text-green-500 font-medium bg-green-500/10 px-2 py-0.5 rounded">{{ currentConcept.prdFeature }}</span>
+        </div>
+
+        <div class="border-t border-gray-800 pt-4">
+          <p class="text-[10px] text-gray-600 uppercase tracking-widest mb-3">What's new</p>
+          <div v-for="page in currentConcept.pages" :key="page.id" class="mb-3 last:mb-0">
+            <p class="text-[10px] text-gray-600 mb-1.5">{{ page.label }}</p>
+            <ul class="space-y-1">
+              <li v-for="change in page.changes" :key="change" class="flex items-start gap-1.5 text-[12px] text-gray-400 leading-snug">
+                <span class="text-gray-600 flex-shrink-0">·</span>{{ change }}
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-800 pt-4">
+          <p class="text-[10px] text-gray-600 uppercase tracking-widest mb-3">Pros / Cons</p>
+          <ul class="space-y-2">
+            <li v-for="pro in currentConcept.pros" :key="pro" class="flex items-start gap-2 text-[12px] text-gray-400 leading-snug">
+              <span class="text-green-500 flex-shrink-0 font-bold leading-none mt-px">+</span>{{ pro }}
+            </li>
+            <li v-for="con in currentConcept.cons" :key="con" class="flex items-start gap-2 text-[12px] text-gray-400 leading-snug">
+              <span class="text-red-400 flex-shrink-0 font-bold leading-none mt-px">−</span>{{ con }}
+            </li>
+          </ul>
+        </div>
+
+        <div class="border-t border-gray-800 pt-4">
+          <p class="text-[10px] text-gray-600 uppercase tracking-widest mb-2">Success metric</p>
+          <p class="text-[12px] text-gray-300 leading-relaxed">{{ currentConcept.prdMetric }}</p>
+        </div>
+
+      </div>
+    </template>
+  </aside>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       MAIN CONTENT AREA
+       ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="flex-1 flex flex-col overflow-hidden">
+
+    <!-- BM back-office shell: header + nav + page title + tabs -->
+    <div class="sticky top-0 z-30 bg-bm-surface flex-shrink-0">
+
+      <!-- Header -->
+      <header class="border-b border-bm-border">
+        <div class="flex items-center gap-4 px-8 h-14">
+          <img src="../assets/bm-logo.svg" alt="Back Market" class="h-7 w-auto select-none" />
+          <div class="flex items-center gap-3 ml-6">
+            <span class="text-sm text-bm-text-mid">Hello <strong class="font-semibold text-bm-text-hi">{{ SELLER_NAME }}</strong></span>
+            <button class="border border-bm-border-action rounded-bm-sm px-3 py-1 text-xs text-bm-text-low hover:bg-bm-gray-100 transition-colors">Leave seller view</button>
+          </div>
+          <div class="ml-auto flex items-center gap-1">
+            <button class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-bm-text-hi bg-bm-gray-100 hover:bg-bm-gray-200 rounded-bm transition-colors">
+              Sales
+              <svg class="w-4 h-4 text-bm-text-muted" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+            </button>
+            <button class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-bm-text-hi bg-bm-gray-100 hover:bg-bm-gray-200 rounded-bm transition-colors">
+              English (Ireland)
+              <svg class="w-4 h-4 text-bm-text-muted" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+            </button>
+            <button class="ml-1 w-8 h-8 rounded-full bg-bm-gray-100 border border-bm-border flex items-center justify-center hover:bg-bm-gray-200 transition-colors">
+              <svg class="w-4 h-4 text-bm-text-muted" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Nav -->
+      <nav class="bg-bm-surface border-b border-bm-border">
+        <div class="px-8 flex items-center">
+          <button
+            v-for="item in NAV_ITEMS" :key="item"
+            :class="['relative px-4 py-3 text-sm transition-colors border-b-2 whitespace-nowrap', item === activeNavItem ? 'font-semibold text-bm-text-hi border-bm-text-hi' : 'font-normal text-bm-text-muted border-transparent hover:text-bm-text-mid hover:border-bm-gray-300']"
+            @click="activeNavItem = item"
+          >{{ item }}</button>
+        </div>
+      </nav>
+
+      <!-- Page title + tabs -->
+      <div v-if="PAGE_TITLE && TABS.length" class="px-8">
+        <h1 class="text-3xl font-bold text-bm-text-hi mt-6 mb-4">{{ PAGE_TITLE }}</h1>
+        <div class="border-b border-bm-border flex items-center">
+          <button
+            v-for="tab in TABS" :key="tab"
+            :class="['px-5 py-3 text-sm whitespace-nowrap transition-colors border-b-2 -mb-px', tab === activeTab ? 'font-semibold text-bm-text-hi border-bm-text-hi' : 'font-normal text-bm-text-muted border-transparent hover:text-bm-text-mid hover:border-bm-gray-300']"
+            @click="activeTab = tab"
+          >{{ tab }}</button>
+        </div>
+      </div>
+
+    </div><!-- /shell -->
+
+
+    <!-- Scrollable prototype content — click to flash hotspots -->
+    <div class="relative flex-1 overflow-hidden">
+      <div class="absolute inset-0 overflow-y-auto bg-gray-50" @click="flashHotspots">
+
+        <!-- ── CONCEPT 1 ───────────────────────────────────────────────────── -->
+        <!--
+          Build your concept 1 screens here.
+          Use <BmShell> is already wrapping this — just add page content below.
+          Tip: click anywhere in the prototype to highlight interactive zones.
+        -->
+        <div v-show="activeConcept === 1">
+
+          <!-- YOUR CONTENT GOES HERE -->
+          <div class="p-8 text-bm-text-low text-sm">Concept 1 — replace this placeholder with your prototype screens.</div>
+
+        </div>
+
+        <!-- ── CONCEPT 2 ── uncomment when ready ──────────────────────────── -->
+        <!--
+        <div v-show="activeConcept === 2">
+
+          YOUR CONCEPT 2 CONTENT HERE
+
+        </div>
+        -->
+
+      </div>
+
+      <!--
+        ── MODALS & SLIDE-IN PANELS ─────────────────────────────────────────
+        Place modals here — as siblings of the scroll div, NOT inside it.
+        Use v-if + absolute inset-0. Never use <Teleport>.
+
+        <div v-if="showModal" class="absolute inset-0 z-50 bg-black/40 flex items-center justify-center p-4">
+          <div class="bg-white rounded-bm-xl shadow-xl w-full max-w-lg p-6">
+            Modal content
+          </div>
+        </div>
+        ─────────────────────────────────────────────────────────────────── -->
+
+      <!-- ── DROPPED CONCEPT OVERLAY ───────────────────────────────────────
+           Fires automatically when a dropped concept pill is clicked.
+           The backdrop is non-dismissible — "View it anyway" is the only exit.
+           To activate: add concept numbers to DROPPED_CONCEPTS in the config. -->
+      <div v-if="showDroppedModal" class="absolute inset-0 z-50 bg-black/60 flex items-center justify-center p-4 font-body">
+        <div class="relative bg-white rounded-bm-xl shadow-xl w-full max-w-md">
+          <div class="p-8 text-center">
+            <div class="w-12 h-12 mx-auto mb-5 rounded-full bg-bm-gray-100 flex items-center justify-center">
+              <svg class="w-5 h-5 text-bm-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/>
+              </svg>
+            </div>
+            <p class="text-xs font-semibold tracking-widest text-bm-text-muted uppercase mb-2">Concept {{ activeConcept }}</p>
+            <h2 class="font-semibold text-2xl text-bm-text-hi mb-3">Dropped on {{ DROPPED_DATE }}</h2>
+            <p class="text-sm text-bm-text-low leading-relaxed mb-8">Kept for reference.</p>
+            <button
+              class="prototype-hotspot w-full bg-bm-text-hi hover:opacity-80 text-white font-semibold rounded-bm px-5 py-3 text-sm transition-opacity"
+              @click="showDroppedModal = false"
+            >
+              View it anyway
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /main -->
+</div><!-- /app -->
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+<script>
+// ─── PROTOTYPE CONFIG ────────────────────────────────────────────────────────
+// Edit the values in this section to configure your prototype.
+
+const TITLE       = 'Your Prototype Title'   // shown in the sidebar header
+const SELLER_NAME = 'Seller Co.'             // shown in the BM shell header
+const PAGE_TITLE  = 'Page Title'             // shown above the tabs
+const NAV_ITEMS   = ['Home', 'Money', 'Catalog', 'Orders', 'Messages']
+const TABS        = ['Overview', 'Details']
+
+// Dropped concepts — list concept numbers that were deprioritised.
+// Their sidebar pills will show a diagonal slash, and clicking them
+// shows an overlay modal before revealing the concept.
+// Leave empty if no concepts are dropped: []
+const DROPPED_CONCEPTS = []   // e.g. [3, 4]
+const DROPPED_DATE     = ''   // e.g. 'April 23rd'
+
+// Define your concepts below. The sidebar generates everything automatically.
+// Each concept needs: name, prdFeature, prdMetric, pros[], cons[], pages[]
+// Each page needs: id, label, navItem, changes[]
+// Pages can optionally have: subStates: [{ id, label }]
+const conceptMeta = [
+  {
+    name: 'Concept A',
+    prdFeature: 'PRD ref — feature name',
+    prdMetric: 'Describe the success metric for this concept.',
+    pros: ['Why this approach works'],
+    cons: ['What it trades off'],
+    pages: [
+      {
+        id: 'home',
+        label: 'Home',
+        navItem: 'Home',
+        changes: ['What changed on this page'],
+      },
+      {
+        id: 'money',
+        label: 'Money',
+        navItem: 'Money',
+        changes: ['What changed on this page'],
+      },
+    ],
+  },
+  // ── TO ADD CONCEPT 2: duplicate this block, update the content ──────────
+  // {
+  //   name: 'Concept B',
+  //   prdFeature: 'PRD ref — feature name',
+  //   prdMetric: 'Describe the success metric.',
+  //   pros: ['Why this approach works'],
+  //   cons: ['What it trades off'],
+  //   pages: [
+  //     { id: 'home', label: 'Home', navItem: 'Home', changes: ['What changed'] },
+  //   ],
+  // },
+]
+
+
+// ─── APP ─────────────────────────────────────────────────────────────────────
+// No need to edit below this line — Claude handles this section.
+
+const { createApp, ref, computed, watch, nextTick, onMounted } = Vue
+
+createApp({
+  setup() {
+    // Sidebar state
+    const sidebarOpen   = ref(true)
+    const previewMode   = ref('after')
+    const activeConcept = ref(1)
+    const activeTab     = ref(TABS[0] ?? '')
+    const activeNavItem = ref(NAV_ITEMS[0] ?? '')
+
+    // One active page ID per concept (independent navigation)
+    const activePageIds = ref(conceptMeta.map(c => c.pages[0]?.id ?? ''))
+    const activePageId  = computed(() => activePageIds.value[activeConcept.value - 1] ?? '')
+    const currentConcept = computed(() => conceptMeta[activeConcept.value - 1] ?? conceptMeta[0])
+
+    function setActivePage(id) {
+      activePageIds.value[activeConcept.value - 1] = id
+    }
+
+    // Page accordion
+    const expandedPageIds = ref([activePageId.value])
+    const pageTreeEl = ref(null)
+    const pageTreeHasMore = ref(false)
+
+    function checkPageTreeScroll() {
+      const el = pageTreeEl.value
+      if (!el) return
+      pageTreeHasMore.value = el.scrollHeight > el.clientHeight + 4 && el.scrollTop < el.scrollHeight - el.clientHeight - 4
+    }
+
+    watch(activePageId, id => {
+      if (id && !expandedPageIds.value.includes(id)) {
+        expandedPageIds.value = [...expandedPageIds.value, id]
+      }
+    })
+    watch(activeConcept, (newVal) => {
+      nextTick(() => { expandedPageIds.value = [activePageId.value] })
+      showDroppedModal.value = DROPPED_CONCEPTS.includes(newVal)
+    })
+
+    onMounted(() => nextTick(checkPageTreeScroll))
+
+    watch(expandedPageIds, () => nextTick(checkPageTreeScroll))
+
+    function toggleExpanded(pageId) {
+      expandedPageIds.value = expandedPageIds.value.includes(pageId)
+        ? expandedPageIds.value.filter(id => id !== pageId)
+        : [...expandedPageIds.value, pageId]
+    }
+
+    function navigateTo(pageId) {
+      setActivePage(pageId)
+      if (!expandedPageIds.value.includes(pageId)) {
+        expandedPageIds.value = [...expandedPageIds.value, pageId]
+      }
+    }
+
+    // Dropped concept overlay
+    const showDroppedModal = ref(false)
+
+    // Sub-state navigation
+    const activeSubStateId = ref('')
+
+    function navigateToSubState(pageId, subStateId) {
+      navigateTo(pageId)
+      activeSubStateId.value = subStateId
+    }
+
+    // Reset tooltip
+    const showResetTooltip = ref(false)
+    let resetTimer = null
+    function onResetHover() { resetTimer = setTimeout(() => { showResetTooltip.value = true }, 2000) }
+    function onResetLeave() { clearTimeout(resetTimer); showResetTooltip.value = false }
+
+    function resetDismissedUi() {
+      // Add reset logic here — e.g. re-show a dismissed banner or panel
+    }
+
+    // Hotspot flash (click anywhere in prototype area)
+    const showHotspots = ref(false)
+    function flashHotspots() {
+      showHotspots.value = true
+      setTimeout(() => { showHotspots.value = false }, 1000)
+    }
+
+    onMounted(() => { document.title = TITLE })
+
+    return {
+      conceptMeta, TITLE, SELLER_NAME, PAGE_TITLE, NAV_ITEMS, TABS,
+      DROPPED_CONCEPTS, DROPPED_DATE,
+      sidebarOpen, previewMode, activeConcept, activeTab, activeNavItem,
+      activePageId, expandedPageIds, currentConcept, activeSubStateId,
+      pageTreeEl, pageTreeHasMore, checkPageTreeScroll,
+      showDroppedModal, showResetTooltip, showHotspots,
+      navigateTo, navigateToSubState, toggleExpanded,
+      onResetHover, onResetLeave, resetDismissedUi, flashHotspots,
+    }
+  }
+}).mount('#app')
+</script>
+</body>
+</html>

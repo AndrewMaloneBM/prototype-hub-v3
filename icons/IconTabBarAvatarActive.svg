@@ -1,0 +1,3 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <g clip-path="url(#icon-tab-bar-avatar-active-clip)"><path fill-rule="evenodd" d="M16.778 23.81A13 13 0 1 0 31.222 2.191a13 13 0 0 0-14.444 21.617M19 5.516a9 9 0 1 1 10 14.966A9 9 0 0 1 19 5.517" clip-rule="evenodd" fill="currentColor"/><path d="M42.586 47.414A2 2 0 0 0 46 46v-5.91a8.09 8.09 0 0 0-5.84-7.52A51.478 51.478 0 0 0 24.06 30h-.12a51.208 51.208 0 0 0-16.37 2.66A8 8 0 0 0 2 40.05v6a2 2 0 0 0 4 0v-6a4 4 0 0 1 2.94-3.61 47.898 47.898 0 0 1 15-2.44h.12a48.109 48.109 0 0 1 14.81 2.35A4.18 4.18 0 0 1 42 40.08V46a2 2 0 0 0 .586 1.414" fill="currentColor"/></g><defs><clipPath id="icon-tab-bar-avatar-active-clip"><path d="M0 0h48v48H0z"/></clipPath></defs>
+</svg>

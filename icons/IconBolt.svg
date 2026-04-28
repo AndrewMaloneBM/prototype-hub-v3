@@ -1,0 +1,3 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <g clip-path="url(#icon-bolt-clip)"><path fill-rule="evenodd" d="M12.009 2.482c.79-1.097 2.516-.335 2.237.988l-1.322 6.28h5.1a1.25 1.25 0 0 1 1.014 1.98l-7.047 9.788c-.79 1.097-2.516.334-2.238-.988l1.323-6.28h-5.1a1.25 1.25 0 0 1-1.014-1.98l7.047-9.788m.526 1.836-6.07 8.432H12a.75.75 0 0 1 .734.905l-1.269 6.027 6.07-8.432H12a.75.75 0 0 1-.734-.905l1.269-6.027" clip-rule="evenodd" fill="currentColor"/></g><defs><clipPath id="icon-bolt-clip"><path d="M0 0h24v24H0z"/></clipPath></defs>
+</svg>

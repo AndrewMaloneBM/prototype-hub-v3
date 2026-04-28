@@ -1,0 +1,74 @@
+{
+  "focus.default-hi": {
+    "comment": "This token defines the focus outline; it is provided on all platforms based on technical constraints (CSS `outline` for Web, shadow and/or border for Figma).",
+    "default": {
+      "color": {
+        "ref": "color.functional.focus.50",
+        "value": "hsl(225, 100%, 60%)"
+      },
+      "style": "solid",
+      "thickness": "2px",
+      "offset": "2px"
+    },
+    "mood-inverse": {
+      "color": {
+        "ref": "color.functional.focus.50",
+        "value": "hsl(225, 100%, 60%)"
+      }
+    }
+  },
+  "focus.default-low": {
+    "comment": "This token is used for input focus outlines.",
+    "default": {
+      "color": {
+        "ref": "color.raw.grey.80",
+        "value": "hsl(225, 7%, 78%)"
+      },
+      "style": "solid",
+      "thickness": "2px",
+      "offset": "0px"
+    },
+    "mood-inverse": {
+      "color": {
+        "ref": "color.raw.grey.30",
+        "value": "hsl(223, 5%, 28%)"
+      }
+    }
+  },
+  "focus.danger-low": {
+    "comment": "This token is used to outline input components that are in an error state.",
+    "default": {
+      "color": {
+        "ref": "color.functional.danger.80",
+        "value": "hsl(2, 100%, 85%)"
+      },
+      "style": "solid",
+      "thickness": "2px",
+      "offset": "0px"
+    },
+    "mood-inverse": {
+      "color": {
+        "ref": "color.functional.danger.30",
+        "value": "hsl(350, 91%, 29%)"
+      }
+    }
+  },
+  "focus.inset-hi": {
+    "comment": "This focus outline is rendered within a component; useful for when an interactive component is rendered in an overflow-hidden context.",
+    "default": {
+      "color": {
+        "ref": "color.functional.focus.50",
+        "value": "hsl(225, 100%, 60%)"
+      },
+      "style": "solid",
+      "thickness": "2px",
+      "offset": "-2px"
+    },
+    "mood-inverse": {
+      "color": {
+        "ref": "color.functional.focus.50",
+        "value": "hsl(225, 100%, 60%)"
+      }
+    }
+  }
+}

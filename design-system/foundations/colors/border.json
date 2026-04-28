@@ -1,0 +1,467 @@
+{
+  "color.border.static.default.hi": {
+    "comment": "Border for static, highlighted content. Use for pressed states and progress bars.",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.20",
+        "value": "hsl(223, 7%, 20%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.95",
+        "value": "hsl(223, 28%, 95%)"
+      }
+    }
+  },
+  "color.border.static.default.mid": {
+    "comment": "Border for static, secondary content.",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.70",
+        "value": "hsl(223, 4%, 68%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.40",
+        "value": "hsl(223, 4%, 37%)"
+      }
+    }
+  },
+  "color.border.static.default.low": {
+    "comment": "Default border for static content: dividers and containers.",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.90",
+        "value": "hsl(225, 15%, 89%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.30",
+        "value": "hsl(223, 5%, 28%)"
+      }
+    }
+  },
+  "color.border.static.default.dim": {
+    "comment": "Border with opacity",
+    "default": {
+      "base": {
+        "ref": "color.raw.alpha.black.40",
+        "value": "hsla(225, 21%, 7%, 0.4)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.alpha.white.40",
+        "value": "hsla(223, 28%, 95%, 0.4)"
+      }
+    }
+  },
+  "color.border.static.danger.hi": {
+    "comment": "Border for static content with a danger function.",
+    "default": {
+      "base": {
+        "ref": "color.functional.danger.40",
+        "value": "hsl(351, 84%, 39%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.functional.danger.70",
+        "value": "hsl(0, 100%, 76%)"
+      }
+    }
+  },
+  "color.border.static.danger.mid": {
+    "comment": "Border for static content with a danger function.",
+    "default": {
+      "base": {
+        "ref": "color.functional.danger.70",
+        "value": "hsl(0, 100%, 76%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.functional.danger.40",
+        "value": "hsl(351, 84%, 39%)"
+      }
+    }
+  },
+  "color.border.static.success.hi": {
+    "comment": "Border for static content with a success function.",
+    "default": {
+      "base": {
+        "ref": "color.functional.success.40",
+        "value": "hsl(156, 100%, 21%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.functional.success.70",
+        "value": "hsl(151, 56%, 49%)"
+      }
+    }
+  },
+  "color.border.static.success.mid": {
+    "comment": "Border for static content with a success function.",
+    "default": {
+      "base": {
+        "ref": "color.raw.mid.emerald.70",
+        "value": "hsl(151, 56%, 49%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.mid.emerald.40",
+        "value": "hsl(156, 100%, 21%)"
+      }
+    }
+  },
+  "color.border.static.brand.hi": {
+    "comment": "Border for static content with a brand function (blue tones).",
+    "default": {
+      "base": {
+        "ref": "color.raw.mindaro.70",
+        "value": "hsl(70, 45%, 49%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.mid.cornflower.58",
+        "value": "hsl(230, 81%, 69%)"
+      }
+    }
+  },
+  "color.border.static.brand.mid": {
+    "comment": "Border for static content with a brand function (purple tones).",
+    "default": {
+      "base": {
+        "ref": "color.raw.mid.purple.55",
+        "value": "hsl(268, 74%, 65%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.mid.purple.55",
+        "value": "hsl(268, 74%, 65%)"
+      }
+    }
+  },
+  "color.border.static.brand.low": {
+    "comment": "Border for static content with a brand function (pink tones).",
+    "default": {
+      "base": {
+        "ref": "color.raw.mid.blush.63",
+        "value": "hsl(337, 71%, 68%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.mid.blush.63",
+        "value": "hsl(337, 71%, 68%)"
+      }
+    }
+  },
+  "color.border.static.info.mid": {
+    "comment": "Border for static content with an informative intention",
+    "default": {
+      "base": {
+        "ref": "color.functional.info.70",
+        "value": "hsl(219, 43%, 72%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.functional.info.40",
+        "value": "hsl(219, 27%, 40%)"
+      }
+    }
+  },
+  "color.border.static.warning.mid": {
+    "comment": "Border for static content with a warning function",
+    "default": {
+      "base": {
+        "ref": "color.functional.warning.70",
+        "value": "hsl(39, 51%, 58%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.functional.warning.40",
+        "value": "hsl(42, 75%, 27%)"
+      }
+    }
+  },
+  "color.border.action.default.hi": {
+    "comment": "Border for action elements of high importance",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.20",
+        "value": "hsl(223, 7%, 20%)"
+      },
+      "pressed": {
+        "ref": "color.raw.grey.20",
+        "value": "hsl(223, 7%, 20%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.80",
+        "value": "hsl(225, 7%, 78%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.95",
+        "value": "hsl(223, 28%, 95%)"
+      },
+      "pressed": {
+        "ref": "color.raw.grey.95",
+        "value": "hsl(223, 28%, 95%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.35",
+        "value": "hsl(223, 4%, 33%)"
+      }
+    }
+  },
+  "color.border.action.default.low": {
+    "comment": "Border for action elements of low importance",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.55",
+        "value": "hsl(223, 3%, 52%)"
+      },
+      "pressed": {
+        "ref": "color.raw.grey.5",
+        "value": "hsl(225, 21%, 7%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.80",
+        "value": "hsl(225, 7%, 78%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.50",
+        "value": "hsl(223, 3%, 47%)"
+      },
+      "pressed": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.35",
+        "value": "hsl(223, 4%, 33%)"
+      }
+    }
+  },
+  "color.border.action.success.hi": {
+    "comment": "Border for important action with a success function.",
+    "default": {
+      "base": {
+        "ref": "color.raw.mid.emerald.40",
+        "value": "hsl(156, 100%, 21%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.80",
+        "value": "hsl(225, 7%, 78%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.mid.emerald.70",
+        "value": "hsl(151, 56%, 49%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.35",
+        "value": "hsl(223, 4%, 33%)"
+      }
+    }
+  },
+  "color.border.action.danger.hi": {
+    "comment": "Border for action elements of high importance, with a danger function",
+    "default": {
+      "base": {
+        "ref": "color.functional.danger.40",
+        "value": "hsl(351, 84%, 39%)"
+      },
+      "pressed": {
+        "ref": "color.functional.danger.60",
+        "value": "hsl(357, 92%, 65%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.80",
+        "value": "hsl(225, 7%, 78%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.functional.danger.70",
+        "value": "hsl(0, 100%, 76%)"
+      },
+      "pressed": {
+        "ref": "color.functional.danger.50",
+        "value": "hsl(354, 72%, 52%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.35",
+        "value": "hsl(223, 4%, 33%)"
+      }
+    }
+  },
+  "color.border.action.danger.low": {
+    "comment": "Border for action elements of low importance, with a danger function",
+    "default": {
+      "base": {
+        "ref": "color.functional.danger.60",
+        "value": "hsl(357, 92%, 65%)"
+      },
+      "pressed": {
+        "ref": "color.functional.danger.40",
+        "value": "hsl(351, 84%, 39%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.80",
+        "value": "hsl(225, 7%, 78%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.functional.danger.40",
+        "value": "hsl(351, 84%, 39%)"
+      },
+      "pressed": {
+        "ref": "color.functional.danger.60",
+        "value": "hsl(357, 92%, 65%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.35",
+        "value": "hsl(223, 4%, 33%)"
+      }
+    }
+  },
+  "color.border.action.brand.hi": {
+    "comment": "Border for action elements with a brand function (blue tones)",
+    "default": {
+      "base": {
+        "ref": "color.raw.mid.cornflower.58",
+        "value": "hsl(230, 81%, 69%)"
+      },
+      "pressed": {
+        "ref": "color.raw.mid.cornflower.35",
+        "value": "hsl(229, 57%, 45%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.80",
+        "value": "hsl(225, 7%, 78%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.mid.cornflower.35",
+        "value": "hsl(229, 57%, 45%)"
+      },
+      "pressed": {
+        "ref": "color.raw.mid.cornflower.58",
+        "value": "hsl(230, 81%, 69%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.35",
+        "value": "hsl(223, 4%, 33%)"
+      }
+    }
+  },
+  "color.border.action.brand.mid": {
+    "comment": "Border for action elements with a brand function (purple tones)",
+    "default": {
+      "base": {
+        "ref": "color.raw.mid.purple.55",
+        "value": "hsl(268, 74%, 65%)"
+      },
+      "pressed": {
+        "ref": "color.raw.mid.purple.35",
+        "value": "hsl(269, 58%, 44%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.80",
+        "value": "hsl(225, 7%, 78%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.mid.purple.35",
+        "value": "hsl(269, 58%, 44%)"
+      },
+      "pressed": {
+        "ref": "color.raw.mid.purple.55",
+        "value": "hsl(268, 74%, 65%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.35",
+        "value": "hsl(223, 4%, 33%)"
+      }
+    }
+  },
+  "color.border.action.brand.low": {
+    "comment": "Border for action elements with a brand function (pink tones)",
+    "default": {
+      "base": {
+        "ref": "color.raw.mid.blush.63",
+        "value": "hsl(337, 71%, 68%)"
+      },
+      "pressed": {
+        "ref": "color.raw.mid.blush.35",
+        "value": "hsl(335, 52%, 37%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.80",
+        "value": "hsl(225, 7%, 78%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.mid.blush.35",
+        "value": "hsl(335, 52%, 37%)"
+      },
+      "pressed": {
+        "ref": "color.raw.mid.blush.63",
+        "value": "hsl(337, 71%, 68%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.35",
+        "value": "hsl(223, 4%, 33%)"
+      }
+    }
+  },
+  "color.border.overlap.default.low": {
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      },
+      "hover": {
+        "ref": "color.raw.grey.94",
+        "value": "hsl(220, 19%, 94%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.black.5",
+        "value": "hsla(225, 21%, 7%, 0.05)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.20",
+        "value": "hsl(223, 7%, 20%)"
+      },
+      "hover": {
+        "ref": "color.raw.grey.36",
+        "value": "hsl(223, 4%, 34%)"
+      },
+      "disabled": {
+        "ref": "color.raw.alpha.white.5",
+        "value": "hsla(223, 28%, 95%, 0.05)"
+      }
+    }
+  }
+}

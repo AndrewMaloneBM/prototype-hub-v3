@@ -1,0 +1,738 @@
+{
+  "color.text.static.default.hi": {
+    "comment": "Important static text, such as titles or labels.",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.5",
+        "value": "hsl(225, 21%, 7%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.60",
+        "value": "hsl(223, 3%, 57%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.55",
+        "value": "hsl(223, 3%, 52%)"
+      }
+    }
+  },
+  "color.text.static.default.mid": {
+    "comment": "Secondary static text, such as body text.",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.20",
+        "value": "hsl(223, 7%, 20%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.60",
+        "value": "hsl(223, 3%, 57%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.96",
+        "value": "hsl(228, 24%, 96%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.55",
+        "value": "hsl(223, 3%, 52%)"
+      }
+    }
+  },
+  "color.text.static.default.low": {
+    "comment": "Subtle static text, such as captions.",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.40",
+        "value": "hsl(223, 4%, 37%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.60",
+        "value": "hsl(223, 3%, 57%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.80",
+        "value": "hsl(225, 7%, 78%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.55",
+        "value": "hsl(223, 3%, 52%)"
+      }
+    }
+  },
+  "color.text.static.warning.hi": {
+    "comment": "Static text of high importance, with a warning function.",
+    "default": {
+      "base": {
+        "ref": "color.functional.warning.40",
+        "value": "hsl(42, 75%, 27%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.60",
+        "value": "hsl(223, 3%, 57%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.functional.warning.70",
+        "value": "hsl(39, 51%, 58%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.55",
+        "value": "hsl(223, 3%, 52%)"
+      }
+    }
+  },
+  "color.text.static.danger.hi": {
+    "comment": "Static text of high importance, with a danger function.",
+    "default": {
+      "base": {
+        "ref": "color.functional.danger.40",
+        "value": "hsl(351, 84%, 39%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.60",
+        "value": "hsl(223, 3%, 57%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.functional.danger.70",
+        "value": "hsl(0, 100%, 76%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.55",
+        "value": "hsl(223, 3%, 52%)"
+      }
+    }
+  },
+  "color.text.static.success.hi": {
+    "comment": "Static text of high importance, with a success function.",
+    "default": {
+      "base": {
+        "ref": "color.functional.success.40",
+        "value": "hsl(156, 100%, 21%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.60",
+        "value": "hsl(223, 3%, 57%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.functional.success.70",
+        "value": "hsl(151, 56%, 49%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.55",
+        "value": "hsl(223, 3%, 52%)"
+      }
+    }
+  },
+  "color.text.static.info.hi": {
+    "comment": "Static text of high importance, with an information function.",
+    "default": {
+      "base": {
+        "ref": "color.functional.info.40",
+        "value": "hsl(219, 27%, 40%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.60",
+        "value": "hsl(223, 3%, 57%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.functional.info.70",
+        "value": "hsl(219, 43%, 72%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.55",
+        "value": "hsl(223, 3%, 52%)"
+      }
+    }
+  },
+  "color.text.static.brand.hi": {
+    "comment": "Static text with a brand function (blue tones).",
+    "default": {
+      "base": {
+        "ref": "color.raw.mid.cornflower.40",
+        "value": "hsl(230, 50%, 50%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.60",
+        "value": "hsl(223, 3%, 57%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.dark.tangaroa.70",
+        "value": "hsl(228, 96%, 78%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.55",
+        "value": "hsl(223, 3%, 52%)"
+      }
+    }
+  },
+  "color.text.static.brand.mid": {
+    "comment": "Static text with a brand function (purple tones).",
+    "default": {
+      "base": {
+        "ref": "color.raw.mid.purple.40",
+        "value": "hsl(269, 51%, 49%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.60",
+        "value": "hsl(223, 3%, 57%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.dark.violet.70",
+        "value": "hsl(280, 67%, 75%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.55",
+        "value": "hsl(223, 3%, 52%)"
+      }
+    }
+  },
+  "color.text.static.brand.low": {
+    "comment": "Static text with a brand function (pink tones).",
+    "default": {
+      "base": {
+        "ref": "color.raw.mid.blush.40",
+        "value": "hsl(335, 47%, 42%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.60",
+        "value": "hsl(223, 3%, 57%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.dark.coffee.70",
+        "value": "hsl(2, 93%, 76%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.55",
+        "value": "hsl(223, 3%, 52%)"
+      }
+    }
+  },
+  "color.text.static.light.hi": {
+    "comment": "Text that always stays light, no matter the mood or theme.",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.60",
+        "value": "hsl(223, 3%, 57%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.55",
+        "value": "hsl(223, 3%, 52%)"
+      }
+    }
+  },
+  "color.text.action.default.hi": {
+    "comment": "Action text of high importance, e.g. links.",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.5",
+        "value": "hsl(225, 21%, 7%)"
+      },
+      "hover": {
+        "ref": "color.raw.grey.25",
+        "value": "hsl(223, 6%, 24%)"
+      },
+      "pressed": {
+        "ref": "color.raw.grey.5",
+        "value": "hsl(225, 21%, 7%)"
+      },
+      "hoverpressed": {
+        "ref": "color.raw.grey.25",
+        "value": "hsl(223, 6%, 24%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.60",
+        "value": "hsl(223, 3%, 57%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      },
+      "hover": {
+        "ref": "color.raw.grey.80",
+        "value": "hsl(225, 7%, 78%)"
+      },
+      "pressed": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      },
+      "hoverpressed": {
+        "ref": "color.raw.grey.80",
+        "value": "hsl(225, 7%, 78%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.55",
+        "value": "hsl(223, 3%, 52%)"
+      }
+    }
+  },
+  "color.text.action.default.low": {
+    "comment": "Action text of low importance.",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.35",
+        "value": "hsl(223, 4%, 33%)"
+      },
+      "hover": {
+        "ref": "color.raw.grey.50",
+        "value": "hsl(223, 3%, 47%)"
+      },
+      "pressed": {
+        "ref": "color.raw.grey.5",
+        "value": "hsl(225, 21%, 7%)"
+      },
+      "hoverpressed": {
+        "ref": "color.raw.grey.25",
+        "value": "hsl(223, 6%, 24%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.60",
+        "value": "hsl(223, 3%, 57%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.90",
+        "value": "hsl(225, 15%, 89%)"
+      },
+      "hover": {
+        "ref": "color.raw.grey.70",
+        "value": "hsl(223, 4%, 68%)"
+      },
+      "pressed": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      },
+      "hoverpressed": {
+        "ref": "color.raw.grey.80",
+        "value": "hsl(225, 7%, 78%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.55",
+        "value": "hsl(223, 3%, 52%)"
+      }
+    }
+  },
+  "color.text.action.brand.hi": {
+    "comment": "Action text with a brand function (blue tones).",
+    "default": {
+      "base": {
+        "ref": "color.raw.mid.cornflower.40",
+        "value": "hsl(230, 50%, 50%)"
+      },
+      "hover": {
+        "ref": "color.raw.mid.cornflower.55",
+        "value": "hsl(230, 73%, 65%)"
+      },
+      "pressed": {
+        "ref": "color.raw.mid.cornflower.40",
+        "value": "hsl(230, 50%, 50%)"
+      },
+      "hoverpressed": {
+        "ref": "color.raw.mid.cornflower.55",
+        "value": "hsl(230, 73%, 65%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.60",
+        "value": "hsl(223, 3%, 57%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.dark.tangaroa.70",
+        "value": "hsl(228, 96%, 78%)"
+      },
+      "hover": {
+        "ref": "color.raw.dark.tangaroa.55",
+        "value": "hsl(227, 54%, 62%)"
+      },
+      "pressed": {
+        "ref": "color.raw.dark.tangaroa.70",
+        "value": "hsl(228, 96%, 78%)"
+      },
+      "hoverpressed": {
+        "ref": "color.raw.dark.tangaroa.55",
+        "value": "hsl(227, 54%, 62%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.55",
+        "value": "hsl(223, 3%, 52%)"
+      }
+    }
+  },
+  "color.text.action.brand.mid": {
+    "comment": "Action text with a brand function (purple tones).",
+    "default": {
+      "base": {
+        "ref": "color.raw.mid.purple.40",
+        "value": "hsl(269, 51%, 49%)"
+      },
+      "hover": {
+        "ref": "color.raw.mid.purple.55",
+        "value": "hsl(268, 74%, 65%)"
+      },
+      "pressed": {
+        "ref": "color.raw.mid.purple.40",
+        "value": "hsl(269, 51%, 49%)"
+      },
+      "hoverpressed": {
+        "ref": "color.raw.mid.purple.55",
+        "value": "hsl(268, 74%, 65%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.60",
+        "value": "hsl(223, 3%, 57%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.dark.violet.70",
+        "value": "hsl(280, 67%, 75%)"
+      },
+      "hover": {
+        "ref": "color.raw.dark.violet.55",
+        "value": "hsl(280, 39%, 59%)"
+      },
+      "pressed": {
+        "ref": "color.raw.dark.violet.70",
+        "value": "hsl(280, 67%, 75%)"
+      },
+      "hoverpressed": {
+        "ref": "color.raw.dark.violet.55",
+        "value": "hsl(280, 39%, 59%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.55",
+        "value": "hsl(223, 3%, 52%)"
+      }
+    }
+  },
+  "color.text.action.brand.low": {
+    "comment": "Action text with a brand function (pink tones).",
+    "default": {
+      "base": {
+        "ref": "color.raw.mid.blush.40",
+        "value": "hsl(335, 47%, 42%)"
+      },
+      "hover": {
+        "ref": "color.raw.mid.blush.55",
+        "value": "hsl(337, 53%, 59%)"
+      },
+      "pressed": {
+        "ref": "color.raw.mid.blush.40",
+        "value": "hsl(335, 47%, 42%)"
+      },
+      "hoverpressed": {
+        "ref": "color.raw.mid.blush.55",
+        "value": "hsl(337, 53%, 59%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.60",
+        "value": "hsl(223, 3%, 57%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.dark.coffee.70",
+        "value": "hsl(2, 93%, 76%)"
+      },
+      "hover": {
+        "ref": "color.raw.dark.coffee.55",
+        "value": "hsl(1, 50%, 59%)"
+      },
+      "pressed": {
+        "ref": "color.raw.dark.coffee.70",
+        "value": "hsl(2, 93%, 76%)"
+      },
+      "hoverpressed": {
+        "ref": "color.raw.dark.coffee.55",
+        "value": "hsl(1, 50%, 59%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.55",
+        "value": "hsl(223, 3%, 52%)"
+      }
+    }
+  },
+  "color.text.action.danger.hi": {
+    "comment": "Action text with a danger function.",
+    "default": {
+      "base": {
+        "ref": "color.functional.danger.40",
+        "value": "hsl(351, 84%, 39%)"
+      },
+      "hover": {
+        "ref": "color.functional.danger.55",
+        "value": "hsl(355, 90%, 60%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.60",
+        "value": "hsl(223, 3%, 57%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.functional.danger.70",
+        "value": "hsl(0, 100%, 76%)"
+      },
+      "hover": {
+        "ref": "color.functional.danger.55",
+        "value": "hsl(355, 90%, 60%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.55",
+        "value": "hsl(223, 3%, 52%)"
+      }
+    }
+  },
+  "color.text.action.success.hi": {
+    "comment": "Action text with a success function.",
+    "default": {
+      "base": {
+        "ref": "color.functional.success.40",
+        "value": "hsl(156, 100%, 21%)"
+      },
+      "hover": {
+        "ref": "color.functional.success.55",
+        "value": "hsl(157, 100%, 30%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.60",
+        "value": "hsl(223, 3%, 57%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.functional.success.70",
+        "value": "hsl(151, 56%, 49%)"
+      },
+      "hover": {
+        "ref": "color.functional.success.55",
+        "value": "hsl(157, 100%, 30%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.55",
+        "value": "hsl(223, 3%, 52%)"
+      }
+    }
+  },
+  "color.text.onaction.default.hi": {
+    "comment": "Text applied on an action.default.hi background.",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      },
+      "pressed": {
+        "ref": "color.raw.grey.5",
+        "value": "hsl(225, 21%, 7%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.60",
+        "value": "hsl(223, 3%, 57%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.5",
+        "value": "hsl(225, 21%, 7%)"
+      },
+      "pressed": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.55",
+        "value": "hsl(223, 3%, 52%)"
+      }
+    }
+  },
+  "color.text.onaction.default.mid": {
+    "comment": "Text applied on an action.default.mid background.",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.5",
+        "value": "hsl(225, 21%, 7%)"
+      },
+      "pressed": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.60",
+        "value": "hsl(223, 3%, 57%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      },
+      "pressed": {
+        "ref": "color.raw.grey.5",
+        "value": "hsl(225, 21%, 7%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.55",
+        "value": "hsl(223, 3%, 52%)"
+      }
+    }
+  },
+  "color.text.onaction.default.low": {
+    "comment": "Text applied on an action.default.low background.",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.5",
+        "value": "hsl(225, 21%, 7%)"
+      },
+      "pressed": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.60",
+        "value": "hsl(223, 3%, 57%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      },
+      "pressed": {
+        "ref": "color.raw.grey.5",
+        "value": "hsl(225, 21%, 7%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.55",
+        "value": "hsl(223, 3%, 52%)"
+      }
+    }
+  },
+  "color.text.onaction.danger.hi": {
+    "comment": "Text applied on any action.hi background, with a danger function.",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      },
+      "pressed": {
+        "ref": "color.functional.danger.40",
+        "value": "hsl(351, 84%, 39%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.60",
+        "value": "hsl(223, 3%, 57%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.5",
+        "value": "hsl(225, 21%, 7%)"
+      },
+      "pressed": {
+        "ref": "color.functional.danger.70",
+        "value": "hsl(0, 100%, 76%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.55",
+        "value": "hsl(223, 3%, 52%)"
+      }
+    }
+  },
+  "color.text.onaction.danger.mid": {
+    "comment": "Text applied on any action.mid background, with a danger function.",
+    "default": {
+      "base": {
+        "ref": "color.functional.danger.40",
+        "value": "hsl(351, 84%, 39%)"
+      },
+      "pressed": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.60",
+        "value": "hsl(223, 3%, 57%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.functional.danger.70",
+        "value": "hsl(0, 100%, 76%)"
+      },
+      "pressed": {
+        "ref": "color.functional.danger.40",
+        "value": "hsl(351, 84%, 39%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.55",
+        "value": "hsl(223, 3%, 52%)"
+      }
+    }
+  },
+  "color.text.onaction.success.hi": {
+    "comment": "Text applied on any action.hi background, with a success function.",
+    "default": {
+      "base": {
+        "ref": "color.raw.grey.100",
+        "value": "hsl(0, 0%, 100%)"
+      },
+      "pressed": {
+        "ref": "color.functional.success.40",
+        "value": "hsl(156, 100%, 21%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.60",
+        "value": "hsl(223, 3%, 57%)"
+      }
+    },
+    "mood-inverse": {
+      "base": {
+        "ref": "color.raw.grey.5",
+        "value": "hsl(225, 21%, 7%)"
+      },
+      "pressed": {
+        "ref": "color.functional.success.70",
+        "value": "hsl(151, 56%, 49%)"
+      },
+      "disabled": {
+        "ref": "color.raw.grey.55",
+        "value": "hsl(223, 3%, 52%)"
+      }
+    }
+  }
+}

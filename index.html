@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prototype Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <style>
+    [v-cloak] { display: none; }
+
+    :root {
+      --ink: #2F3137;
+      --bg: #F8F9FC;
+      --surface: #FFFFFF;
+      --green: #1A9C5B;
+      --amber: #D4860A;
+      --muted: #9EA3AF;
+      --border: #DDDFE4;
+      --radius: 20px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ink: #F0F1F5;
+        --bg: #18191E;
+        --surface: #23252B;
+        --green: #2DC87A;
+        --amber: #F0A030;
+        --muted: #6B7280;
+        --border: rgba(255,255,255,0.1);
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); font-family: 'DM Sans', Inter, sans-serif; }
+
+    .wb-grid-bg {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image: radial-gradient(circle, rgba(47,49,55,0.25) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    @media (prefers-color-scheme: dark) {
+      .wb-grid-bg { background-image: radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px); }
+    }
+
+    .wb-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: 56px; border-bottom: 1px solid transparent;
+      transition: background 0.25s, border-color 0.25s, backdrop-filter 0.25s;
+    }
+    .wb-nav--scrolled {
+      background: rgba(248,249,252,0.82);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border-bottom-color: var(--border);
+    }
+    @media (prefers-color-scheme: dark) { .wb-nav--scrolled { background: rgba(24,25,30,0.85); } }
+
+    .wb-nav-inner {
+      max-width: 1080px; margin: 0 auto; height: 100%;
+      padding: 0 24px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .wb-nav-sub, .wb-nav-name {
+      font-family: 'DM Mono', monospace; font-size: 11px;
+      color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em;
+    }
+
+    .wb-main { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 120px 24px 96px; }
+    .wb-header { margin-bottom: 72px; }
+
+    .wb-title {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(42px, 5.5vw, 64px); line-height: 1.05;
+      letter-spacing: -0.02em; color: var(--green);
+    }
+    .wb-title-prefix { color: var(--ink); }
+    .wb-title em { font-style: italic; }
+
+    .wb-section { margin-bottom: 64px; }
+    .wb-section-head { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+    .wb-section-label {
+      display: flex; align-items: center; gap: 8px;
+      font-family: 'DM Mono', monospace; font-size: 11px;
+      text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); white-space: nowrap;
+    }
+    .wb-section-line { flex: 1; height: 1px; background: var(--border); }
+    .wb-section-count { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); }
+
+    .wb-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .wb-dot-amber { background: var(--amber); }
+    .wb-dot-green { background: var(--green); }
+    .wb-dot-pulse { animation: dotPulse 2s ease-in-out infinite; }
+    @keyframes dotPulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.5; transform:scale(0.7); } }
+
+    .wb-bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+
+    .wb-card {
+      position: relative; border-radius: var(--radius);
+      border: 1.5px solid rgba(47,49,55,0.12); overflow: hidden;
+      text-decoration: none; color: inherit; display: block;
+      animation: fadeUp 0.45s ease both;
+    }
+    @media (prefers-color-scheme: dark) { .wb-card { border-color: rgba(255,255,255,0.08); } }
+    .wb-card-strip { height: 3px; background: var(--accent, var(--green)); }
+
+    .wb-card-project {
+      grid-column: span 12; background: #1E2025;
+      border-color: rgba(255,255,255,0.07); display: flex; flex-direction: column;
+    }
+    .wb-project-top { display: flex; align-items: stretch; }
+    .wb-project-top-main {
+      flex: 1; padding: 28px 32px; display: flex; flex-direction: column; gap: 14px; min-width: 0;
+    }
+    .wb-project-top-aside {
+      width: 220px; flex-shrink: 0;
+      border-left: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.02); padding: 28px;
+      display: flex; flex-direction: column; justify-content: space-between; gap: 24px;
+    }
+    .wb-aside-label {
+      font-family: 'DM Mono', monospace; font-size: 9px;
+      text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.28);
+    }
+    .wb-aside-value {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 56px; line-height: 1; color: rgba(255,255,255,0.92);
+    }
+    .wb-aside-cta {
+      display: inline-flex; align-items: center; justify-content: space-between;
+      gap: 6px; font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500;
+      color: var(--accent, var(--green)); text-decoration: none;
+      padding: 10px 14px; border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.03);
+      transition: background 0.2s, border-color 0.2s, gap 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .wb-aside-cta:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.18); gap: 10px; }
+
+    .wb-meta {
+      font-family: 'DM Mono', monospace; font-size: 10px;
+      text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.28);
+    }
+    .wb-card-title {
+      font-family: 'DM Serif Display', Georgia, serif; font-style: italic;
+      font-size: 22px; line-height: 1.2; color: rgba(255,255,255,0.92);
+    }
+    .wb-problem-statement {
+      font-family: 'DM Serif Display', Georgia, serif; font-style: italic;
+      font-size: 15px; line-height: 1.5; color: rgba(255,255,255,0.72);
+      border-left: 2px solid var(--accent); padding-left: 12px;
+    }
+    .wb-card-desc { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 300; line-height: 1.65; color: rgba(255,255,255,0.48); }
+
+    .wb-meta-strip {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
+      margin-top: 4px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .wb-meta-strip-item { display: inline-flex; align-items: baseline; gap: 6px; }
+    .wb-meta-strip-key { font-family: 'DM Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.3); }
+    .wb-meta-strip-val { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.72); }
+    .wb-meta-strip-sep { width: 1px; height: 10px; background: rgba(255,255,255,0.12); }
+
+    .wb-card-empty {
+      grid-column: span 12; border-style: dashed; border-color: var(--border);
+      background: transparent; padding: 48px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+    }
+    .wb-empty-icon { font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--muted); opacity: 0.4; }
+    .wb-empty-text { font-family: 'DM Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 760px) {
+      .wb-project-top { flex-direction: column; }
+      .wb-project-top-aside { width: 100%; border-left: none; border-top: 1px solid rgba(255,255,255,0.08); flex-direction: row; align-items: center; }
+      .wb-aside-value { font-size: 36px; }
+      .wb-aside-cta { flex: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div id="app" v-cloak>
+    <div class="wb-grid-bg"></div>
+
+    <nav class="wb-nav" :class="{ 'wb-nav--scrolled': scrolled }">
+      <div class="wb-nav-inner">
+        <span class="wb-nav-sub">{{ HUB.slug }} · prototypes</span>
+        <span class="wb-nav-name">{{ HUB.designerName }}</span>
+      </div>
+    </nav>
+
+    <main class="wb-main">
+      <header class="wb-header">
+        <h1 class="wb-title">
+          <span class="wb-title-prefix">{{ HUB.teamName }} —</span><br><em>Prototype</em> Hub
+        </h1>
+      </header>
+
+      <!-- In Progress -->
+      <section class="wb-section">
+        <div class="wb-section-head">
+          <div class="wb-section-label">
+            <span class="wb-dot wb-dot-amber wb-dot-pulse"></span>
+            In progress
+          </div>
+          <div class="wb-section-line"></div>
+          <span class="wb-section-count">{{ inProgress.length }}</span>
+        </div>
+
+        <div class="wb-bento">
+          <article
+            v-for="(p, i) in inProgress"
+            :key="p.link"
+            class="wb-card wb-card-project"
+            :style="{ '--accent': p.accent, animationDelay: `${i * 60}ms` }"
+          >
+            <div class="wb-card-strip"></div>
+            <div class="wb-project-top">
+              <div class="wb-project-top-main">
+                <span class="wb-meta">{{ p.date }}</span>
+                <h2 class="wb-card-title">{{ p.title }}</h2>
+                <p v-if="p.problemStatement" class="wb-problem-statement">{{ p.problemStatement }}</p>
+                <p class="wb-card-desc">{{ p.description }}</p>
+                <div class="wb-meta-strip">
+                  <span v-if="p.goal" class="wb-meta-strip-item">
+                    <span class="wb-meta-strip-key">Goal</span>
+                    <span class="wb-meta-strip-val">{{ p.goal }}</span>
+                  </span>
+                  <span class="wb-meta-strip-sep" v-if="p.goal && p.impact"></span>
+                  <span v-if="p.impact" class="wb-meta-strip-item">
+                    <span class="wb-meta-strip-key">Impact</span>
+                    <span class="wb-meta-strip-val">{{ p.impact }}</span>
+                  </span>
+                  <span class="wb-meta-strip-sep"></span>
+                  <span class="wb-meta-strip-item">
+                    <span class="wb-meta-strip-key">Scope</span>
+                    <span class="wb-meta-strip-val">{{ p.scope }}</span>
+                  </span>
+                </div>
+              </div>
+              <div class="wb-project-top-aside">
+                <div>
+                  <div class="wb-aside-label">Concepts</div>
+                  <div class="wb-aside-value">{{ p.concepts }}</div>
+                </div>
+                <a :href="p.link" class="wb-aside-cta">
+                  Open prototype <span>→</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <div v-if="!inProgress.length" class="wb-card wb-card-empty">
+            <div class="wb-empty-icon">+</div>
+            <p class="wb-empty-text">No prototypes in progress — ask Claude to create one</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Shipped -->
+      <section class="wb-section">
+        <div class="wb-section-head">
+          <div class="wb-section-label">
+            <span class="wb-dot wb-dot-green"></span>
+            Complete projects
+          </div>
+          <div class="wb-section-line"></div>
+          <span class="wb-section-count">{{ shipped.length }}</span>
+        </div>
+
+        <div class="wb-bento">
+          <article
+            v-for="(p, i) in shipped"
+            :key="p.link"
+            class="wb-card wb-card-project"
+            :style="{ '--accent': p.accent, animationDelay: `${i * 60}ms` }"
+          >
+            <div class="wb-card-strip"></div>
+            <div class="wb-project-top">
+              <div class="wb-project-top-main">
+                <span class="wb-meta">{{ p.date }}</span>
+                <h2 class="wb-card-title">{{ p.title }}</h2>
+                <p class="wb-card-desc">{{ p.description }}</p>
+                <div class="wb-meta-strip">
+                  <span class="wb-meta-strip-item">
+                    <span class="wb-meta-strip-key">Scope</span>
+                    <span class="wb-meta-strip-val">{{ p.scope }}</span>
+                  </span>
+                </div>
+              </div>
+              <div class="wb-project-top-aside">
+                <div>
+                  <div class="wb-aside-label">Concepts</div>
+                  <div class="wb-aside-value">{{ p.concepts }}</div>
+                </div>
+                <a :href="p.link" class="wb-aside-cta">View <span>→</span></a>
+              </div>
+            </div>
+          </article>
+
+          <div v-if="!shipped.length" class="wb-card wb-card-empty">
+            <div class="wb-empty-icon">✓</div>
+            <p class="wb-empty-text">No complete projects yet</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // ─── HUB CONFIG ─────────────────────────────────────────────────────────
+    // Claude updates these during first-time setup. Do not edit manually.
+    const HUB = {
+      teamName:     '__TEAM_NAME__',
+      designerName: '__DESIGNER_NAME__',
+      slug:         '__TEAM_SLUG__',
+    }
+
+    // ─── PROTOTYPES ─────────────────────────────────────────────────────────
+    // Ask Claude to add prototypes here. Each entry becomes a card on the hub.
+    //
+    // Fields:
+    //   title, description, problemStatement (optional), author, date, scope,
+    //   goal (optional), impact (optional), concepts (number), link, accent (hex)
+    //
+    const inProgress = [
+      // Example — remove when you add your first real prototype:
+      // {
+      //   title: 'Payments redesign',
+      //   description: 'Exploring two approaches to the seller payment flow.',
+      //   problemStatement: 'Sellers don\'t understand why payouts are delayed.',
+      //   author: 'Your Name',
+      //   date: 'Apr 2026',
+      //   scope: 'Seller back-office',
+      //   goal: 'Reduce payout confusion',
+      //   impact: '3 seller squads',
+      //   concepts: 2,
+      //   link: 'prototypes/payments-redesign.html',
+      //   accent: '#18a271',
+      // },
+    ]
+
+    const shipped = []
+
+    // ─── APP ─────────────────────────────────────────────────────────────────
+    const { createApp, ref, onMounted, onUnmounted } = Vue
+
+    createApp({
+      setup() {
+        const scrolled = ref(false)
+        let handler
+
+        onMounted(() => {
+          document.title = `${HUB.teamName} — Prototype Hub`
+          handler = () => { scrolled.value = window.scrollY > 20 }
+          window.addEventListener('scroll', handler, { passive: true })
+        })
+        onUnmounted(() => window.removeEventListener('scroll', handler))
+
+        return { HUB, inProgress, shipped, scrolled }
+      }
+    }).mount('#app')
+  </script>
+</body>
+</html>

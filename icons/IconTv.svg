@@ -1,0 +1,3 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <g clip-path="url(#icon-tv-clip)"><path fill-rule="evenodd" d="M3.5 4.25A1.25 1.25 0 0 0 2.25 5.5v10a1.25 1.25 0 0 0 1.25 1.25h7.75v1.5H8.5a.75.75 0 0 0 0 1.5h7a.75.75 0 0 0 0-1.5h-2.75v-1.5h7.75a1.25 1.25 0 0 0 1.25-1.25v-10a1.25 1.25 0 0 0-1.25-1.25h-17m16.75 11v-9.5H3.75v9.5h16.5" clip-rule="evenodd" fill="currentColor"/></g><defs><clipPath id="icon-tv-clip"><path d="M0 0h24v24H0z"/></clipPath></defs>
+</svg>
